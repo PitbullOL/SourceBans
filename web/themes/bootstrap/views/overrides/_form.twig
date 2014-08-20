@@ -20,33 +20,33 @@
 </div>
 <div class="modal-body">
   <div class="control-group">
-		{{ form.label(model, 'type', {'class': 'control-label'}) }}
-		<div class="controls">
-			{{ form.dropDownList(model, 'type', SB.Override.getTypes) }}
-			{{ form.error(model, 'type') }}
-		</div>
+    {{ form.label(model, 'type', {'class': 'control-label'}) }}
+    <div class="controls">
+      {{ form.dropDownList(model, 'type', SB.Override.getTypes) }}
+      {{ form.error(model, 'type') }}
+    </div>
   </div>
 
-	<div class="control-group">
-		{{ form.labelEx(model, 'name', {'class': 'control-label'}) }}
-		<div class="controls">
-			{{ form.textField(model, 'name', {'size': 60, 'maxlength': 64}) }}
-			{{ form.error(model, 'name') }}
-		</div>
-	</div>
+  <div class="control-group">
+    {{ form.labelEx(model, 'name', {'class': 'control-label'}) }}
+    <div class="controls">
+      {{ form.textField(model, 'name', {'size': 60, 'maxlength': 64}) }}
+      {{ form.error(model, 'name') }}
+    </div>
+  </div>
 
-	<div class="control-group">
-		{{ form.labelEx(model, 'flags', {'class': 'control-label'}) }}
-		<div class="controls">
-			{% set radio = C.Html.radioButton('SBServerGroup[flags]', true, {'value': ''}) ~ t('sourcebans', 'Anyone') }}
-			{{ C.Html.label(radio, 'SBServerGroup_flags', {'class': 'radio'}) }}
-			{% for flag, description in SourceBans.app.flags %}
-				{% set radio = C.Html.radioButton('SBServerGroup[flags]', false, {'id': 'SBServerGroup_flags_' ~ flag, 'value': flag}) ~ description %}
-				{{ C.Html.label(radio, 'SBServerGroup_flags_' ~ flag, {'class': 'radio'}) }}
-			{% endfor %}
-			{{ form.error(model, 'flags') }}
-		</div>
-	</div>
+  <div class="control-group">
+    {{ form.labelEx(model, 'flags', {'class': 'control-label'}) }}
+    <div class="controls">
+      {% set radio = C.Html.radioButton('SBServerGroup[flags]', true, {'value': ''}) ~ t('sourcebans', 'Anyone') }}
+      {{ C.Html.label(radio, 'SBServerGroup_flags', {'class': 'radio'}) }}
+      {% for flag, description in SourceBans.app.flags %}
+        {% set radio = C.Html.radioButton('SBServerGroup[flags]', false, {'id': 'SBServerGroup_flags_' ~ flag, 'value': flag}) ~ description %}
+        {{ C.Html.label(radio, 'SBServerGroup_flags_' ~ flag, {'class': 'radio'}) }}
+      {% endfor %}
+      {{ form.error(model, 'flags') }}
+    </div>
+  </div>
 </div>
 <div class="modal-footer">
   <button aria-hidden="true" class="btn" data-dismiss="modal" type="button">{{ t('sourcebans', 'common.close') }}</button>

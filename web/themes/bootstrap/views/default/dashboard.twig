@@ -65,7 +65,7 @@
 		var $header = $("#" + grid + " tr.selected");
 		var id      = $header.data("key");
 		
-		location.href = "' ~ this.createUrl('site/bans', {'#': '__ID__'}) ~ '".replace("__ID__", id);
+		location.href = "' ~ this.createUrl('default/bans', {'#': '__ID__'}) ~ '".replace("__ID__", id);
 	}',
 	'summaryText': '<em>' ~ t('sourcebans', 'Total bans') ~ ': ' ~ total_bans ~ '</em>',
 }) %}

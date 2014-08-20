@@ -108,7 +108,7 @@
   </section>
 </div>
 
-{% do App.clientScript.registerScript('site_report_queryServers', '
+{% do App.clientScript.registerScript('default_report_queryServers', '
   $.getJSON("' ~ this.createUrl('servers/info') ~ '", function(servers) {
     $.each(servers, function(i, server) {
       var $option = $("#SBReport_server_id option[value=\\"" + server.id + "\\"]");

@@ -32,11 +32,11 @@
     {{ form.label(model, 'default_page', {'class': 'control-label'}) }}
     <div class="controls">
       {{ form.dropDownList(model, 'default_page', {
-        'dashboard': t('sourcebans', 'controllers.site.dashboard.title'),
-        'bans': t('sourcebans', 'controllers.site.bans.title'),
-        'servers': t('sourcebans', 'controllers.site.servers.title'),
-        'report': t('sourcebans', 'controllers.site.report.title'),
-        'appeal': t('sourcebans', 'controllers.site.appeal.title'),
+        'dashboard': t('sourcebans', 'controllers.default.dashboard.title'),
+        'bans': t('sourcebans', 'controllers.default.bans.title'),
+        'servers': t('sourcebans', 'controllers.default.servers.title'),
+        'report': t('sourcebans', 'controllers.default.report.title'),
+        'appeal': t('sourcebans', 'controllers.default.appeal.title'),
       }) }}
     </div>
   </div>
@@ -88,7 +88,7 @@
 </fieldset>
 
 <fieldset>
-  <legend>{{ t('sourcebans', 'controllers.site.dashboard.title') }}</legend>
+  <legend>{{ t('sourcebans', 'controllers.default.dashboard.title') }}</legend>
   <div class="control-group">
     <div class="controls">
       {% set checkbox = form.checkBox(model, 'dashboard_blocks_popup') ~ model.getAttributeLabel('dashboard_blocks_popup') %}
@@ -134,7 +134,7 @@
 </fieldset>
 
 <fieldset>
-  <legend>{{ t('sourcebans', 'controllers.site.bans.title') }}</legend>
+  <legend>{{ t('sourcebans', 'controllers.default.bans.title') }}</legend>
   <div class="control-group">
     {{ form.labelEx(model, 'items_per_page', {'class': 'control-label'}) }}
     <div class="controls">

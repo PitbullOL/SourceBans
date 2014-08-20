@@ -24,34 +24,34 @@
 	'id': 'tabs',
 	'items': [
 		{
-			'active': this.route == 'site/dashboard' or (this.route == 'site/index' and SourceBans.app.settings.default_page == 'dashboard'),
-			'label': t('sourcebans', 'controllers.site.dashboard.title'),
-			'url': ['site/dashboard'],
+			'active': this.route == 'default/dashboard' or (this.route == 'default/index' and SourceBans.app.settings.default_page == 'dashboard'),
+			'label': t('sourcebans', 'controllers.default.dashboard.title'),
+			'url': ['default/dashboard'],
 			'linkOptions': {'title': t('sourcebans', 'This page shows an overview of your bans and servers.')},
 		},
 		{
-			'active': this.route == 'site/bans' or (this.route == 'site/index' and SourceBans.app.settings.default_page == 'bans'),
-			'label': t('sourcebans', 'controllers.site.bans.title'),
-			'url': ['site/bans'],
+			'active': this.route == 'default/bans' or (this.route == 'default/index' and SourceBans.app.settings.default_page == 'bans'),
+			'label': t('sourcebans', 'controllers.default.bans.title'),
+			'url': ['default/bans'],
 			'linkOptions': {'title': t('sourcebans', 'All of the bans in the database can be viewed from here.')},
 		},
 		{
-			'active': this.route == 'site/servers' or (this.route == 'site/index' and SourceBans.app.settings.default_page == 'servers'),
-			'label': t('sourcebans', 'controllers.site.servers.title'),
-			'url': ['site/servers'],
+			'active': this.route == 'default/servers' or (this.route == 'default/index' and SourceBans.app.settings.default_page == 'servers'),
+			'label': t('sourcebans', 'controllers.default.servers.title'),
+			'url': ['default/servers'],
 			'linkOptions': {'title': t('sourcebans', 'All of your servers and their status can be viewed here.')},
 		},
 		{
-			'active': this.route == 'site/report' or (this.route == 'site/index' and SourceBans.app.settings.default_page == 'report'),
-			'label': t('sourcebans', 'controllers.site.report.title'),
-			'url': ['site/report'],
+			'active': this.route == 'default/report' or (this.route == 'default/index' and SourceBans.app.settings.default_page == 'report'),
+			'label': t('sourcebans', 'controllers.default.report.title'),
+			'url': ['default/report'],
 			'linkOptions': {'title': t('sourcebans', 'You can submit a demo or screenshot of a suspected cheater here. It will then be up for review by one of the admins.')},
 			'visible': SourceBans.app.settings.enable_reports,
 		},
 		{
-			'active': this.route == 'site/appeal' or (this.route == 'site/index' and SourceBans.app.settings.default_page == 'appeal'),
-			'label': t('sourcebans', 'controllers.site.appeal.title'),
-			'url': ['site/appeal'],
+			'active': this.route == 'default/appeal' or (this.route == 'default/index' and SourceBans.app.settings.default_page == 'appeal'),
+			'label': t('sourcebans', 'controllers.default.appeal.title'),
+			'url': ['default/appeal'],
 			'linkOptions': {'title': t('sourcebans', 'Here you can protest your ban. And prove your case as to why you should be unbanned.')},
 			'visible': SourceBans.app.settings.enable_appeals,
 		},
@@ -88,7 +88,7 @@
 }) %}
         </div>
         <div class="pull-right">
-          <form action="{{ this.createUrl('site/bans') }}" class="input-append pull-right" id="search">
+          <form action="{{ this.createUrl('default/bans') }}" class="input-append pull-right" id="search">
             <input class="span2" placeholder="{{ t('sourcebans', 'Search bans') }}" name="q" type="search" />
             <button class="btn btn-inverse" type="submit"><i class="icon-search icon-white"></i></button>
           </form>
@@ -98,17 +98,17 @@
 	'items': [
 		{
 			'label': App.user.name,
-			'url': ['site/account'],
+			'url': ['default/account'],
 			'visible': not App.user.isGuest,
 		},
 		{
-			'label': t('sourcebans', 'controllers.site.logout.title'),
-			'url': ['site/logout'],
+			'label': t('sourcebans', 'controllers.default.logout.title'),
+			'url': ['default/logout'],
 			'visible': not App.user.isGuest,
 		},
 		{
-			'label': t('sourcebans', 'controllers.site.login.title'),
-			'url': ['site/login'],
+			'label': t('sourcebans', 'controllers.default.login.title'),
+			'url': ['default/login'],
 			'visible': App.user.isGuest,
 		},
 	],

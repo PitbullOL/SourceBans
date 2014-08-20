@@ -84,7 +84,7 @@
 		var $header = $("#" + grid + " tr.selected");
 		var id      = $header.data("key");
 		
-		location.href = "' ~ this.createUrl('site/servers', {'#': '__ID__'}) ~ '".replace("__ID__", id);
+		location.href = "' ~ this.createUrl('default/servers', {'#': '__ID__'}) ~ '".replace("__ID__", id);
 	}',
 	'summaryText': false,
 }) %}
@@ -127,7 +127,7 @@
   </div>
 </script>
 
-{% do App.clientScript.registerScript('site_servers_hashchange', '
+{% do App.clientScript.registerScript('default_servers_hashchange', '
   $(window).bind("hashchange", function(e) {
     $("#servers-grid > table.table-accordion > tbody > tr.selected").removeClass("selected");
     $("#servers-grid tr.section div:first-child").slideUp(200, "linear");
@@ -179,7 +179,7 @@
 	]|merge(this.menu),
 }) %}
 
-{% do App.clientScript.registerScript('site_servers_playerMenu', '
+{% do App.clientScript.registerScript('default_servers_playerMenu', '
   $(document).on("click", function() {
     $("#player-menu").hide();
   });
@@ -230,7 +230,7 @@
 {% endif %}
 {% endif %}
 
-{% do App.clientScript.registerScript('site_servers_queryServer', '
+{% do App.clientScript.registerScript('default_servers_queryServer', '
   function queryServer(id, callback) {
     if(typeof(id) == "function") {
       callback = id;

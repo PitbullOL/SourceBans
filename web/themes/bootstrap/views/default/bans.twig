@@ -190,18 +190,18 @@
 
 {% do App.clientScript.registerScript('search', "
   $('.search-button').click(function(){
-  	$('.search-form').slideToggle();
-  	return false;
+    $('.search-form').slideToggle();
+    return false;
   });
   $('.search-form form').submit(function(){
-  	$('#bans-grid').yiiGridView('update', {
-  		data: $(this).serialize()
-  	});
-  	return false;
+    $('#bans-grid').yiiGridView('update', {
+      data: $(this).serialize()
+    });
+    return false;
   });
 ") %}
 
-{% do App.clientScript.registerScript('site_bans_hashchange', '
+{% do App.clientScript.registerScript('default_bans_hashchange', '
   $(window).bind("hashchange", function(e) {
     var id       = $.param.fragment();
     var $header  = $("#bans-grid tr[data-key=\\"" + id + "\\"]");
@@ -226,7 +226,7 @@
   });
 ') %}
 
-{% do App.clientScript.registerScript('site_bans_createSections', '
+{% do App.clientScript.registerScript('default_bans_createSections', '
   function createSections() {
     var nullDisplay = \'' ~ grid.nullDisplay ~ '\';
     
@@ -290,7 +290,7 @@
   createSections();
 ') %}
 
-{% do App.clientScript.registerScript('site_bans_queryServer', '
+{% do App.clientScript.registerScript('default_bans_queryServer', '
   $.getJSON("' ~ this.createUrl('servers/info') ~ '", function(servers) {
     window.serverInfo = servers;
     
@@ -311,7 +311,7 @@
   </div>
 </div>
 
-{% do App.clientScript.registerScript('site_bans_commentsDialog', '
+{% do App.clientScript.registerScript('default_bans_commentsDialog', '
   $(document).on("click", ".ban-menu-comments a", function(e) {
     e.preventDefault();
     $("#comments-dialog .modal-body").load($(this).attr("href"), function(data) {
